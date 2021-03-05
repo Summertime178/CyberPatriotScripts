@@ -15,7 +15,6 @@ if [ "$EUID" -ne 0 ] ;
 fi
 #List of Functions:
 #PasswdFun
-#zeroUidFun
 #rootCronFun
 #apacheSecFun
 #fileSecFun
@@ -26,12 +25,14 @@ fi
 #firewallFun
 #sysCtlFun
 #scanFun
+#zeroUidFun
 startFun()
 {
 	clear
-
+	
+	PasswdRulesFun
+	preScriptFun
 	PasswdFun
-	zeroUidFun
 	rootCronFun
 	apacheSecFun
 	fileSecFun
@@ -42,6 +43,7 @@ startFun()
 	firewallFun
 	sysCtlFun
 	scanFun
+	zeroUidFun
 	printf "\033[1;31mDone!\033[0m\n"
 }
 cont(){
@@ -52,6 +54,15 @@ cont(){
 		exit
 	fi
 	clear
+}
+	preScriptFun(){
+	printf "\033[1;31mDO THE OTHER STUFF!!\033[0m\n"
+}
+	PasswdRulesFun(){
+	echo "Change Password rotation rules"
+	echo "Change the password length rules"
+	echo "Change the password complexity rules"
+	cont
 }
 PasswdFun(){
 	printf "\033[1;31mChanging Root's Password..\033[0m\n"
