@@ -55,10 +55,10 @@ cont(){
 	fi
 	clear
 }
-	preScriptFun(){
+preScriptFun(){
 	printf "\033[1;31mDO THE OTHER STUFF!!\033[0m\n"
 }
-	PasswdRulesFun(){
+PasswdRulesFun(){
 	echo "Change Password rotation rules"
 	echo "Change the password length rules"
 	echo "Change the password complexity rules"
